@@ -1,80 +1,99 @@
 
-import { Check, Lock, Users, Zap } from "lucide-react";
-
-const FeatureItem = ({ icon, children }: { icon: React.ReactNode; children: React.ReactNode }) => {
-  return (
-    <div className="flex items-start mb-6">
-      <div className="mr-4 mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-        {icon}
-      </div>
-      <div>
-        {children}
-      </div>
-    </div>
-  );
-};
+import { BadgePercent, PhoneCall, Globe } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import CountUp from "react-countup";
 
 const WhyComsync = () => {
+  const benefits = [
+    {
+      icon: <BadgePercent className="h-12 w-12 text-comsync-blue" />,
+      title: "Reduce Cost by 60%",
+      description: "Lower operational costs with AI agents that scale with your needs without additional hiring or training."
+    },
+    {
+      icon: <PhoneCall className="h-12 w-12 text-comsync-blue" />,
+      title: "Handle 10,000+ Concurrent Calls",
+      description: "Our infrastructure seamlessly manages thousands of simultaneous interactions with consistent quality."
+    },
+    {
+      icon: <Globe className="h-12 w-12 text-comsync-blue" />,
+      title: "Real-time Multilingual Response",
+      description: "Support customers in 30+ languages with automatic translation and cultural adaptation."
+    }
+  ];
+  
+  const metrics = [
+    {
+      title: "Avg Response Time",
+      value: 1.4,
+      unit: "s",
+      description: "Industry-leading response time"
+    },
+    {
+      title: "Accuracy",
+      value: 98.2,
+      unit: "%",
+      description: "Precision in understanding and responding"
+    },
+    {
+      title: "Customer Satisfaction",
+      value: 94.7,
+      unit: "%",
+      description: "Based on post-call surveys"
+    },
+    {
+      title: "Cost Savings",
+      value: 63,
+      unit: "%",
+      description: "Average client savings vs. traditional call centers"
+    }
+  ];
+
   return (
-    <section id="why-comsync" className="section-padding bg-gray-50">
+    <section id="why-comsync" className="section-padding bg-gradient-to-b from-white to-comsync-lightGray">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Comsync?</h2>
-          <p className="text-lg text-comsync-charcoal max-w-2xl mx-auto">
-            Our AI-powered platform is revolutionizing debt collection for financial institutions worldwide.
+        <div className="text-center mb-12 animate-on-scroll">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-display">Why Use <span className="gradient-text">Comsync</span>?</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our specialized vertical AI agents deliver superior performance across key metrics
+            that matter to your business.
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12">
-          <div>
-            <FeatureItem icon={<Zap size={20} className="text-comsync-blue" />}>
-              <h3 className="text-xl font-semibold mb-1">95% Automation with Human Supervision</h3>
-              <p className="text-comsync-charcoal">
-                Our AI agents handle 95% of collection cases autonomously, with human agents involved only for complex edge cases requiring special attention.
-              </p>
-            </FeatureItem>
-            
-            <FeatureItem icon={<Lock size={20} className="text-comsync-blue" />}>
-              <h3 className="text-xl font-semibold mb-1">Local, Private, and Fully Secure</h3>
-              <p className="text-comsync-charcoal">
-                Our system operates with bank-grade security protocols. All data remains within your infrastructure with no external dependencies.
-              </p>
-            </FeatureItem>
-          </div>
-          
-          <div>
-            <FeatureItem icon={<Users size={20} className="text-comsync-blue" />}>
-              <h3 className="text-xl font-semibold mb-1">Most Human-like Agents at Lowest Cost</h3>
-              <p className="text-comsync-charcoal">
-                Our voice agents are indistinguishable from human agents, delivering superior customer experience at a fraction of traditional collection costs.
-              </p>
-            </FeatureItem>
-            
-            <FeatureItem icon={<Check size={20} className="text-comsync-blue" />}>
-              <h3 className="text-xl font-semibold mb-1">Smart Loan Restructuring and Retention</h3>
-              <p className="text-comsync-charcoal">
-                Our AI analyzes borrower payment capacity to offer personalized repayment plans, increasing recovery rates and maintaining customer relationships.
-              </p>
-            </FeatureItem>
-          </div>
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {benefits.map((benefit, index) => (
+            <div 
+              key={index} 
+              className="bg-white p-8 rounded-xl shadow-md border border-gray-100 animate-on-scroll transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+              <div className="mb-6">{benefit.icon}</div>
+              <h3 className="text-xl font-bold mb-3 font-display">{benefit.title}</h3>
+              <p className="text-gray-600">{benefit.description}</p>
+            </div>
+          ))}
         </div>
         
-        <div className="mt-12 bg-white rounded-xl shadow-sm p-6 md:p-8 border border-gray-100">
-          <div className="flex flex-col md:flex-row md:items-center justify-between">
-            <div className="mb-6 md:mb-0">
-              <h3 className="text-2xl font-semibold mb-2">Compliance Guaranteed</h3>
-              <p className="text-comsync-charcoal">
-                Our AI agents strictly adhere to all regulatory requirements, eliminating compliance risks and maintaining detailed audit logs of all interactions.
-              </p>
-            </div>
-            <div className="flex-shrink-0">
-              <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-comsync-blue to-comsync-darkBlue flex items-center justify-center">
-                  <Lock size={32} className="text-white" />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 animate-on-scroll">
+          {metrics.map((metric, index) => (
+            <Card key={index} className="border-none overflow-hidden shadow-md">
+              <CardContent className="p-0">
+                <div className="h-1.5 bg-gradient-to-r from-comsync-blue to-comsync-indigo"></div>
+                <div className="p-6">
+                  <h4 className="text-sm font-medium text-gray-500 mb-2">{metric.title}</h4>
+                  <div className="flex items-end gap-1">
+                    <CountUp
+                      end={metric.value}
+                      duration={2.5}
+                      decimals={metric.title === "Avg Response Time" ? 1 : 0}
+                      className="text-3xl font-bold text-comsync-charcoal font-display"
+                    />
+                    <span className="text-xl font-medium text-comsync-charcoal mb-0.5">{metric.unit}</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-2">{metric.description}</p>
                 </div>
-              </div>
-            </div>
-          </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

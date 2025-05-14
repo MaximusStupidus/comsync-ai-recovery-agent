@@ -2,10 +2,11 @@
 import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import HowItWorks from '@/components/HowItWorks';
+import VoiceAgentsIntro from '@/components/VoiceAgentsIntro';
 import WhyComsync from '@/components/WhyComsync';
-import SystemFeatures from '@/components/SystemFeatures';
-import Testimonials from '@/components/Testimonials';
+import HowDifferent from '@/components/HowDifferent';
+import UseCases from '@/components/UseCases';
+import Pricing from '@/components/Pricing';
 import Founders from '@/components/Founders';
 import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
@@ -38,10 +39,11 @@ const Index = () => {
     <div className="min-h-screen">
       <Navbar />
       <Hero />
-      <HowItWorks />
+      <VoiceAgentsIntro />
       <WhyComsync />
-      <SystemFeatures />
-      <Testimonials />
+      <HowDifferent />
+      <UseCases />
+      <Pricing />
       <Founders />
       <FinalCTA />
       <Footer />

@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Calendar } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,17 +22,18 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-comsync-charcoal">
+              <span className="text-2xl font-bold text-comsync-charcoal font-display">
                 Com<span className="gradient-text">Sync</span>
               </span>
             </a>
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#how-it-works" className="text-comsync-charcoal hover:text-comsync-blue transition-colors">How It Works</a>
-            <a href="#why-comsync" className="text-comsync-charcoal hover:text-comsync-blue transition-colors">Why Comsync</a>
-            <a href="#features" className="text-comsync-charcoal hover:text-comsync-blue transition-colors">Features</a>
-            <a href="#about" className="text-comsync-charcoal hover:text-comsync-blue transition-colors">About</a>
+            <a href="#what-are-voice-agents" className="text-comsync-charcoal hover:text-comsync-blue transition-colors font-medium">What Are Voice AI Agents?</a>
+            <a href="#why-comsync" className="text-comsync-charcoal hover:text-comsync-blue transition-colors font-medium">Why Comsync</a>
+            <a href="#use-cases" className="text-comsync-charcoal hover:text-comsync-blue transition-colors font-medium">Use Cases</a>
+            <a href="#pricing" className="text-comsync-charcoal hover:text-comsync-blue transition-colors font-medium">Pricing</a>
+            <a href="#about" className="text-comsync-charcoal hover:text-comsync-blue transition-colors font-medium">About</a>
           </div>
           
           <div className="hidden md:block">
@@ -42,6 +43,7 @@ const Navbar = () => {
               className="bg-comsync-blue hover:bg-comsync-darkBlue text-white"
               onClick={() => document.getElementById('demo')?.scrollIntoView({ behavior: 'smooth' })}
             >
+              <Calendar className="mr-2 h-4 w-4" />
               Schedule a Demo
             </Button>
           </div>
@@ -64,11 +66,11 @@ const Navbar = () => {
         <div className="md:hidden bg-white absolute left-0 w-full p-4 shadow-md animate-fade-in">
           <div className="flex flex-col space-y-4">
             <a 
-              href="#how-it-works" 
+              href="#what-are-voice-agents" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-comsync-charcoal hover:text-comsync-blue transition-colors p-2"
             >
-              How It Works
+              What Are Voice AI Agents?
             </a>
             <a 
               href="#why-comsync" 
@@ -78,11 +80,18 @@ const Navbar = () => {
               Why Comsync
             </a>
             <a 
-              href="#features" 
+              href="#use-cases" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="text-comsync-charcoal hover:text-comsync-blue transition-colors p-2"
             >
-              Features
+              Use Cases
+            </a>
+            <a 
+              href="#pricing" 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-comsync-charcoal hover:text-comsync-blue transition-colors p-2"
+            >
+              Pricing
             </a>
             <a 
               href="#about" 
@@ -99,6 +108,7 @@ const Navbar = () => {
                 setIsMobileMenuOpen(false);
               }}
             >
+              <Calendar className="mr-2 h-5 w-5" />
               Schedule a Demo
             </Button>
           </div>

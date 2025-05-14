@@ -1,68 +1,81 @@
 
+import { Linkedin, Mail, Phone, MapPin } from "lucide-react";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-comsync-charcoal text-white py-12">
+    <footer className="bg-comsync-darkCharcoal text-white py-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row justify-between mb-10">
           <div className="mb-8 md:mb-0">
-            <div className="text-2xl font-bold mb-4">
+            <div className="text-2xl font-bold mb-4 font-display">
               Com<span className="text-comsync-blue">Sync</span>
             </div>
-            <p className="text-gray-300 max-w-sm">
-              AI-powered voice agents revolutionizing debt collection for financial institutions.
+            <p className="text-gray-300 max-w-sm mb-6">
+              AI-powered vertical voice agents for specialized industries. Transforming customer interactions through intelligent automation.
             </p>
+            <div className="flex space-x-4">
+              <a href="#" className="text-gray-300 hover:text-white transition-colors">
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a href="mailto:info@comsync.in" className="text-gray-300 hover:text-white transition-colors">
+                <Mail className="h-5 w-5" />
+              </a>
+              <a href="tel:+912269539336" className="text-gray-300 hover:text-white transition-colors">
+                <Phone className="h-5 w-5" />
+              </a>
+            </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
             <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <h4 className="text-lg font-semibold mb-4 font-display">Company</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About</a></li>
+                <li><a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a></li>
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">News</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2">
                 <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Case Studies</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4">Legal</h4>
+              <h4 className="text-lg font-semibold mb-4 font-display">Solutions</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Privacy</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Terms</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Security</a></li>
+                <li><a href="#use-cases" className="text-gray-300 hover:text-white transition-colors">Asset Management</a></li>
+                <li><a href="#use-cases" className="text-gray-300 hover:text-white transition-colors">Debt Collection</a></li>
+                <li><a href="#use-cases" className="text-gray-300 hover:text-white transition-colors">Hospitality</a></li>
+                <li><a href="#use-cases" className="text-gray-300 hover:text-white transition-colors">Tech Support</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-4 font-display">Contact</h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-2">
+                  <Phone className="h-5 w-5 shrink-0 text-comsync-blue" />
+                  <a href="tel:+912269539336" className="text-gray-300 hover:text-white transition-colors">+91 22 6953 9336</a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <Mail className="h-5 w-5 shrink-0 text-comsync-blue" />
+                  <a href="mailto:info@comsync.in" className="text-gray-300 hover:text-white transition-colors">info@comsync.in</a>
+                </li>
+                <li className="flex items-start gap-2">
+                  <MapPin className="h-5 w-5 shrink-0 text-comsync-blue" />
+                  <span className="text-gray-300">Mumbai, India</span>
+                </li>
               </ul>
             </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 mb-4 md:mb-0">
             &copy; {currentYear} Comsync Technologies. All rights reserved.
           </div>
           
           <div className="flex space-x-6">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-              </svg>
-            </a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
           </div>
         </div>
       </div>
